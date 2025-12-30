@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5: Links và Images - Blog Học HTML Thuần</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Học HTML</h1>
+        <p>Học HTML từ cơ bản đến nâng cao - Chỉ dùng HTML + CSS thuần</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="blog.html" class="back-link">← Quay lại danh sách bài</a>
+        
+        <article class="article">
+            <h1>Bài 5: Links và Images</h1>
+            <p class="post-meta">30/12/2025 | Nguyễn Văn A</p>
+
+            <img src="https://www.w3schools.com/html/html_links.asp" alt="Link và Image trong HTML" style="max-width:100%; border-radius:12px; margin:2rem 0;">
+
+            <h2>Thẻ liên kết &lt;a&gt;</h2>
+            <pre><code>&lt;a href="https://google.com" target="_blank"&gt;Mở Google ở tab mới&lt;/a&gt;
+
+&lt;a href="blog.html"&gt;Quay về trang Blog&lt;/a&gt;
+
+&lt;a href="#top"&gt;Quay lên đầu trang&lt;/a&gt;</code></pre>
+
+            <h2>Thẻ hình ảnh &lt;img&gt;</h2>
+            <pre><code>&lt;img src="avatar.jpg" alt="Ảnh đại diện cá nhân" width="400"&gt;
+
+&lt;!-- Ảnh từ internet --&gt;
+&lt;img src="https://via.placeholder.com/800x400?text=Anh+Minh+Hoa+HTML" alt="Ảnh minh họa đẹp" style="border-radius:12px;"&gt;</code></pre>
+
+            <p><strong>Quan trọng nhất:</strong> Luôn thêm thuộc tính <code>alt</code> cho ảnh để hỗ trợ người khiếm thị và tối ưu SEO!</p>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nguyễn Văn A - Blog Học HTML Thuần</p>
+    </footer>
+
+    <div class="toggle-theme" id="theme-toggle">🌙</div>
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light');
+            toggle.innerHTML = '☀️';
+        }
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            toggle.innerHTML = document.body.classList.contains('light') ? '☀️' : '🌙';
+            localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>

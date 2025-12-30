@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 9: Semantic HTML5 - Blog Học HTML Thuần</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Học HTML</h1>
+        <p>Học HTML từ cơ bản đến nâng cao - Chỉ dùng HTML + CSS thuần</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="blog.html" class="back-link">← Quay lại danh sách bài</a>
+        
+        <article class="article">
+            <h1>Bài 9: Semantic HTML5 - HTML Có Nghĩa</h1>
+            <p class="post-meta">30/12/2025 | Nguyễn Văn A</p>
+
+            <img src="https://static.semrush.com/blog/uploads/media/62/de/62de85ae40932e6d41e2966b3af3ca8e/semantic-html5-markup-related-aside-kalicube.png" alt="Semantic HTML5 elements" style="max-width:100%; border-radius:12px; margin:2rem 0;">
+
+            <h2>Tại sao cần Semantic HTML?</h2>
+            <ul>
+                <li>Tốt hơn cho SEO (Google hiểu rõ cấu trúc trang)</li>
+                <li>Hỗ trợ người khiếm thị (screen reader đọc dễ hiểu)</li>
+                <li>Code sạch, dễ bảo trì và làm việc nhóm</li>
+            </ul>
+
+            <h2>Các thẻ semantic phổ biến</h2>
+            <pre><code>&lt;header&gt;Phần đầu trang: logo, menu&lt;/header&gt;
+&lt;nav&gt;Thanh điều hướng&lt;/nav&gt;
+&lt;main&gt;Nội dung chính của trang&lt;/main&gt;
+&lt;section&gt;Một phần nội dung độc lập&lt;/section&gt;
+&lt;article&gt;Một bài viết hoàn chỉnh&lt;/article&gt;
+&lt;aside&gt;Nội dung phụ (sidebar)&lt;/aside&gt;
+&lt;footer&gt;Chân trang: copyright, liên hệ&lt;/footer&gt;</code></pre>
+
+            <p><strong>Thay vì dùng &lt;div&gt; khắp nơi → hãy dùng thẻ semantic đúng mục đích!</strong></p>
+            <p>Đây là bước cuối cùng để code HTML của bạn trở nên chuyên nghiệp và hiện đại.</p>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nguyễn Văn A - Blog Học HTML Thuần</p>
+    </footer>
+
+    <div class="toggle-theme" id="theme-toggle">🌙</div>
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light');
+            toggle.innerHTML = '☀️';
+        }
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            toggle.innerHTML = document.body.classList.contains('light') ? '☀️' : '🌙';
+            localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>

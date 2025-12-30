@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6: Tables - Bảng Trong HTML - Blog Học HTML Thuần</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Học HTML</h1>
+        <p>Học HTML từ cơ bản đến nâng cao - Chỉ dùng HTML + CSS thuần</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="blog.html" class="back-link">← Quay lại danh sách bài</a>
+        
+        <article class="article">
+            <h1>Bài 6: Tables - Bảng Trong HTML</h1>
+            <p class="post-meta">30/12/2025 | Nguyễn Văn A</p>
+
+            <img src="https://www.w3schools.com/html/img_html_table.png" alt="Bảng HTML chuẩn" style="max-width:100%; border-radius:12px; margin:2rem 0;">
+
+            <h2>Bảng chuẩn semantic</h2>
+            <pre><code>&lt;table style="width:100%; border-collapse:collapse;"&gt;
+    &lt;thead&gt;
+        <tr style="background:#7c3aed; color:white;"&gt;
+            &lt;th&gt;STT&lt;/th&gt;
+            &lt;th&gt;Họ tên&lt;/th&gt;
+            &lt;th&gt;Tuổi&lt;/th&gt;
+            &lt;th&gt;Nghề nghiệp&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;Nguyễn Văn A&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+            &lt;td&gt;Front-end Developer&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;Trần Thị B&lt;/td&gt;
+            &lt;td&gt;23&lt;/td&gt;
+            &lt;td&gt;Designer&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+            <p>Dùng &lt;thead&gt;, &lt;tbody&gt;, &lt;th&gt; để bảng có nghĩa ngữ (semantic) và dễ style bằng CSS sau này.</p>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nguyễn Văn A - Blog Học HTML Thuần</p>
+    </footer>
+
+    <div class="toggle-theme" id="theme-toggle">🌙</div>
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light');
+            toggle.innerHTML = '☀️';
+        }
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            toggle.innerHTML = document.body.classList.contains('light') ? '☀️' : '🌙';
+            localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7: Forms - Biểu Mẫu Trong HTML - Blog Học HTML Thuần</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Học HTML</h1>
+        <p>Học HTML từ cơ bản đến nâng cao - Chỉ dùng HTML + CSS thuần</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="blog.html" class="back-link">← Quay lại danh sách bài</a>
+        
+        <article class="article">
+            <h1>Bài 7: Forms - Biểu Mẫu Trong HTML</h1>
+            <p class="post-meta">30/12/2025 | Nguyễn Văn A</p>
+
+            <img src="https://www.jotform.com/blog/wp-content/uploads/2019/09/HTML-forms-featured-01.png" alt="Form HTML đẹp" style="max-width:100%; border-radius:12px; margin:2rem 0;">
+
+            <h2>Form đăng ký cơ bản</h2>
+            <pre><code>&lt;form action="#" method="post"&gt;
+    &lt;label for="name"&gt;Họ và tên:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="text" id="name" name="name" required placeholder="Nhập tên của bạn"&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="email" id="email" name="email" required&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;label&gt;Giới tính:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="radio" name="gender" value="nam" id="nam"&gt; &lt;label for="nam"&gt;Nam&lt;/label&gt;&lt;br&gt;
+    &lt;input type="radio" name="gender" value="nu" id="nu"&gt; &lt;label for="nu"&gt;Nữ&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;label&gt;Sở thích:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="checkbox" name="like" value="code"&gt; Học lập trình&lt;br&gt;
+    &lt;input type="checkbox" name="like" value="design"&gt; Thiết kế&lt;br&gt;&lt;br&gt;
+    
+    &lt;button type="submit" style="padding:12px 24px; background:#7c3aed; color:white; border:none; border-radius:8px; cursor:pointer;"&gt;
+        Gửi thông tin
+    &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+            <p>Form là cách người dùng tương tác với website (đăng ký, liên hệ, tìm kiếm...).</p>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nguyễn Văn A - Blog Học HTML Thuần</p>
+    </footer>
+
+    <div class="toggle-theme" id="theme-toggle">🌙</div>
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light');
+            toggle.innerHTML = '☀️';
+        }
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            toggle.innerHTML = document.body.classList.contains('light') ? '☀️' : '🌙';
+            localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>

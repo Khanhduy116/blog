@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2: Các Thẻ HTML Cơ Bản - Blog Học HTML Thuần</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Học HTML</h1>
+        <p>Học HTML từ cơ bản đến nâng cao - Chỉ dùng HTML + CSS thuần</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="blog.html" class="back-link">← Quay lại danh sách bài</a>
+        
+        <article class="article">
+            <h1>Bài 2: Các Thẻ HTML Cơ Bản</h1>
+            <p class="post-meta">30/12/2025 | Nguyễn Văn A</p>
+
+            <img src="https://www.bitdegree.org/learn/storage/media/images/html-tags.o.jpg" alt="Các thẻ HTML phổ biến" style="max-width:100%; border-radius:12px; margin:2rem 0;">
+
+            <h2>Phân biệt Block và Inline</h2>
+            <ul>
+                <li><strong>Block</strong>: Chiếm toàn bộ chiều rộng, tự động xuống dòng (&lt;div&gt;, &lt;p&gt;, &lt;h1&gt;-&lt;h6&gt;, &lt;ul&gt;, &lt;table&gt;...)</li>
+                <li><strong>Inline</strong>: Chỉ chiếm không gian cần thiết, nằm cùng dòng (&lt;span&gt;, &lt;a&gt;, &lt;strong&gt;, &lt;img&gt;...)</li>
+            </ul>
+
+            <h2>Ví dụ minh họa</h2>
+            <pre><code>&lt;!-- Thẻ DIV - Block --&gt;
+&lt;div style="background:#e0e0e0; padding:20px; margin:10px 0;"&gt;
+    Đây là một khối DIV. Nó chiếm toàn bộ chiều rộng và xuống dòng tự động.
+&lt;/div&gt;
+
+&lt;!-- Thẻ SPAN - Inline --&gt;
+&lt;p&gt;
+    Đây là đoạn văn bình thường. 
+    &lt;span style="color:#7c3aed; font-weight:bold;"&gt;Phần này được đánh dấu bằng SPAN&lt;/span&gt;
+    và vẫn nằm cùng dòng với phần còn lại.
+&lt;/p&gt;
+
+&lt;p&gt;Thẻ P cũng là block - sẽ xuống dòng mới.&lt;/p&gt;</code></pre>
+
+            <p><strong>Kết luận:</strong> Dùng &lt;div&gt; để nhóm các khối lớn, &lt;span&gt; để style một phần nhỏ trong câu.</p>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nguyễn Văn A - Blog Học HTML Thuần</p>
+    </footer>
+
+    <div class="toggle-theme" id="theme-toggle">🌙</div>
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light');
+            toggle.innerHTML = '☀️';
+        }
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            toggle.innerHTML = document.body.classList.contains('light') ? '☀️' : '🌙';
+            localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>

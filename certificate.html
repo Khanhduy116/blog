@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chứng Chỉ Của Tôi - Blog Học HTML Thuần</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Học HTML</h1>
+        <p>Học HTML từ cơ bản đến nâng cao - Chỉ dùng HTML + CSS thuần</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Quay lại trang chủ</a>
+        
+        <article class="article">
+            <h1 style="text-align:center; font-size:2.8rem; margin-bottom:1rem;">Bộ Sưu Tập Chứng Chỉ Của Tôi 🏆</h1>
+            <p style="text-align:center; font-size:1.2rem; opacity:0.9; margin-bottom:3rem;">
+                Dưới đây là các chứng chỉ HTML/CSS/Front-End mà tôi đã đạt được. 
+                Tôi luôn nỗ lực học hỏi để trở thành lập trình viên chuyên nghiệp hơn!
+            </p>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(400px, 1fr)); gap:2.5rem;">
+                <!-- Chứng chỉ 1 -->
+                <div style="text-align:center;">
+                    <img src="https://miro.medium.com/1*26slsvKC4LIIeugDTG-nog.png" alt="HackerRank Frontend Certificate" style="max-width:100%; border-radius:16px; box-shadow:0 15px 40px rgba(124,58,237,0.5);">
+                    <p style="margin-top:1rem; font-weight:600;">HackerRank Front-End Developer</p>
+                </div>
+
+                <!-- Chứng chỉ 2 -->
+                <div style="text-align:center;">
+                    <img src="https://www.w3schools.com/html/img_cert_html.jpg" alt="W3Schools HTML Certificate" style="max-width:100%; border-radius:16px; box-shadow:0 15px 40px rgba(124,58,237,0.5);">
+                    <p style="margin-top:1rem; font-weight:600;">W3Schools HTML Certified</p>
+                </div>
+
+                <!-- Chứng chỉ 3 -->
+                <div style="text-align:center;">
+                    <img src="https://cdn.educba.com/img/Free-Web-Design-Course-Certificate.jpg" alt="Free Web Design Course Certificate" style="max-width:100%; border-radius:16px; box-shadow:0 15px 40px rgba(124,58,237,0.5);">
+                    <p style="margin-top:1rem; font-weight:600;">EDUCBA Web Design Certificate</p>
+                </div>
+
+                <!-- Chứng chỉ 4 -->
+                <div style="text-align:center;">
+                    <img src="https://campus.w3schools.com/cdn/shop/files/Design_uten_navn_-_2024-07-17T124426.419_1500x1003.png?v=1721213071" alt="W3Schools Modern Web Development" style="max-width:100%; border-radius:16px; box-shadow:0 15px 40px rgba(124,58,237,0.5);">
+                    <p style="margin-top:1rem; font-weight:600;">W3Schools Modern Web Development</p>
+                </div>
+
+                <!-- Chứng chỉ 5 -->
+                <div style="text-align:center;">
+                    <img src="https://mirnesglamocic.com/cert/BIG/Certificate-Explore-a-Career-in-FrontEnd-Web-Development.webp" alt="Front-End Web Development Career Certificate" style="max-width:100%; border-radius:16px; box-shadow:0 15px 40px rgba(124,58,237,0.5);">
+                    <p style="margin-top:1rem; font-weight:600;">Career in Front-End Web Development</p>
+                </div>
+
+                <!-- Chứng chỉ 6 -->
+                <div style="text-align:center;">
+                    <img src="https://ecdn.teacherspayteachers.com/cdn-cgi/image/format=avif,quality=70,onerror=redirect/thumbitem/Web-Development-Certificate-of-Completion-Editable-5741311-1656584293/750f-5741311-1.jpg" alt="Web Development Certificate of Completion" style="max-width:100%; border-radius:16px; box-shadow:0 15px 40px rgba(124,58,237,0.5);">
+                    <p style="margin-top:1rem; font-weight:600;">Web Development Completion Certificate</p>
+                </div>
+            </div>
+
+            <p style="text-align:center; margin-top:3rem; font-size:1.2rem; opacity:0.9;">
+                Bạn muốn thêm chứng chỉ của riêng mình? Chỉ cần thay link ảnh (src) bằng ảnh chứng chỉ thật của bạn là xong!
+            </p>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nguyễn Văn A - Blog Học HTML Thuần</p>
+    </footer>
+
+    <div class="toggle-theme" id="theme-toggle">🌙</div>
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light');
+            toggle.innerHTML = '☀️';
+        }
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            toggle.innerHTML = document.body.classList.contains('light') ? '☀️' : '🌙';
+            localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>

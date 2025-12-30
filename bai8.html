@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 8: Div và Span - Blog Học HTML Thuần</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Học HTML</h1>
+        <p>Học HTML từ cơ bản đến nâng cao - Chỉ dùng HTML + CSS thuần</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="blog.html" class="back-link">← Quay lại danh sách bài</a>
+        
+        <article class="article">
+            <h1>Bài 8: Div và Span</h1>
+            <p class="post-meta">30/12/2025 | Nguyễn Văn A</p>
+
+            <img src="https://scaler.com/topics/images/div-tag-html.webp" alt="Div vs Span" style="max-width:100%; border-radius:12px; margin:2rem 0;">
+
+            <h2>&lt;div&gt; - Thẻ khối (Block)</h2>
+            <pre><code>&lt;div style="background:#f0f0f0; padding:20px; margin:15px 0; border-radius:8px;"&gt;
+    &lt;h3&gt;Đây là một khối DIV&lt;/h3&gt;
+    &lt;p&gt;Nó chiếm toàn bộ chiều rộng và xuống dòng tự động.&lt;/p&gt;
+    &lt;p&gt;Dùng DIV để nhóm các phần lớn như header, section, footer...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>&lt;span&gt; - Thẻ inline</h2>
+            <pre><code>&lt;p&gt;
+    Đây là một đoạn văn bình thường. 
+    &lt;span style="color:#7c3aed; font-weight:bold; background:yellow;"&gt;Phần này được bôi nổi bằng SPAN&lt;/span&gt;
+    và vẫn nằm cùng dòng với các chữ khác.
+&lt;/p&gt;</code></pre>
+
+            <p><strong>Kết luận:</strong> DIV dùng để chia bố cục lớn, SPAN dùng để style một phần nhỏ trong văn bản.</p>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nguyễn Văn A - Blog Học HTML Thuần</p>
+    </footer>
+
+    <div class="toggle-theme" id="theme-toggle">🌙</div>
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light');
+            toggle.innerHTML = '☀️';
+        }
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            toggle.innerHTML = document.body.classList.contains('light') ? '☀️' : '🌙';
+            localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>

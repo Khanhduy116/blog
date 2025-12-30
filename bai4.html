@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4: Lists - Danh Sách Trong HTML - Blog Học HTML Thuần</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Học HTML</h1>
+        <p>Học HTML từ cơ bản đến nâng cao - Chỉ dùng HTML + CSS thuần</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="blog.html" class="back-link">← Quay lại danh sách bài</a>
+        
+        <article class="article">
+            <h1>Bài 4: Lists - Danh Sách Trong HTML</h1>
+            <p class="post-meta">30/12/2025 | Nguyễn Văn A</p>
+
+            <img src="https://www.w3schools.com/html/pic_html_lists.gif" alt="Các loại danh sách HTML" style="max-width:100%; border-radius:12px; margin:2rem 0;">
+
+            <h2>3 loại danh sách chính</h2>
+
+            <h3>1. Unordered List (&lt;ul&gt;) - Dấu chấm</h3>
+            <pre><code>&lt;ul&gt;
+    &lt;li&gt;Cà phê sữa đá&lt;/li&gt;
+    &lt;li&gt;Trà chanh&lt;/li&gt;
+    &lt;li&gt;Sinh tố bơ&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+            <h3>2. Ordered List (&lt;ol&gt;) - Đánh số</h3>
+            <pre><code>&lt;ol&gt;
+    &lt;li&gt;Thức dậy lúc 6h&lt;/li&gt;
+    &lt;li&gt;Tập thể dục&lt;/li&gt;
+    &lt;li&gt;Ăn sáng&lt;/li&gt;
+    &lt;li&gt;Bắt đầu học HTML&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+            <h3>3. Description List (&lt;dl&gt;) - Từ điển</h3>
+            <pre><code>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;Ngôn ngữ đánh dấu cấu trúc trang web&lt;/dd&gt;
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Ngôn ngữ định dạng giao diện đẹp mắt&lt;/dd&gt;
+    &lt;dt&gt;JavaScript&lt;/dt&gt;
+    &lt;dd&gt;Ngôn ngữ làm web tương tác&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
+            <p>Danh sách là cách trình bày thông tin rõ ràng, dễ đọc nhất trên web!</p>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nguyễn Văn A - Blog Học HTML Thuần</p>
+    </footer>
+
+    <div class="toggle-theme" id="theme-toggle">🌙</div>
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light');
+            toggle.innerHTML = '☀️';
+        }
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            toggle.innerHTML = document.body.classList.contains('light') ? '☀️' : '🌙';
+            localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>

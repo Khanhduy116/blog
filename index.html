@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Văn A - Chuyên Gia HTML & Front-End</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Nguyễn Văn A</h1>
+        <p>Chuyên Gia HTML, CSS & Front-End Developer</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="profile">
+            <img src="avartar.jpg" alt="Avatar" class="avatar">
+            <h2>Xin chào! Tôi là Nguyễn Văn A 👋</h2>
+            <p>Tôi là một front-end developer đam mê HTML và CSS thuần. Tôi tin rằng một website đẹp và chuẩn semantic không cần framework phức tạp.</p>
+            <p>🚀  4 năm kinh nghiệm xây dựng giao diện web<br>
+               🏆 Chuyên viết HTML sạch, CSS hiện đại, responsive<br>
+               📚 Thích chia sẻ kiến thức HTML bằng tiếng Việt dễ hiểu</p>
+            <a href="certificate.html" class="btn-certificate">
+    🏆  Chứng Chỉ Của Tôi
+</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nguyễn Văn A - Blog Học HTML Thuần</p>
+    </footer>
+
+    <div class="toggle-theme" id="theme-toggle">🌙</div>
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light');
+            toggle.innerHTML = '☀️';
+        }
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            toggle.innerHTML = document.body.classList.contains('light') ? '☀️' : '🌙';
+            localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>

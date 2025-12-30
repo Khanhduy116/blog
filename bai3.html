@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3: Heading và Paragraph - Blog Học HTML Thuần</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Học HTML</h1>
+        <p>Học HTML từ cơ bản đến nâng cao - Chỉ dùng HTML + CSS thuần</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="blog.html" class="back-link">← Quay lại danh sách bài</a>
+        
+        <article class="article">
+            <h1>Bài 3: Heading và Paragraph</h1>
+            <p class="post-meta">30/12/2025 | Nguyễn Văn A</p>
+
+            <img src="https://www.w3schools.com/html/img_html_headings.png" alt="Heading hierarchy" style="max-width:100%; border-radius:12px; margin:2rem 0;">
+
+            <h2>6 cấp độ Heading (tiêu đề)</h2>
+            <pre><code>&lt;h1&gt;Tiêu đề lớn nhất - chỉ dùng 1 lần/trang&lt;/h1&gt;
+&lt;h2&gt;Tiêu đề cấp 2 - dùng cho phần lớn&lt;/h2&gt;
+&lt;h3&gt;Tiêu đề cấp 3&lt;/h3&gt;
+&lt;h4&gt;Tiêu đề cấp 4&lt;/h4&gt;
+&lt;h5&gt;Tiêu đề cấp 5&lt;/h5&gt;
+&lt;h6&gt;Tiêu đề nhỏ nhất&lt;/h6&gt;</code></pre>
+
+            <h2>Thẻ Paragraph và định dạng văn bản</h2>
+            <pre><code>&lt;p&gt;
+    Đây là một đoạn văn bình thường. 
+    Dùng thẻ &lt;br&gt; để xuống dòng thủ công mà không tạo đoạn mới.
+&lt;/p&gt;
+
+&lt;p&gt;
+    &lt;strong&gt;Chữ đậm quan trọng&lt;/strong&gt; | 
+    &lt;em&gt;Chữ nghiêng nhấn mạnh&lt;/em&gt; | 
+    &lt;u&gt;Gạch chân&lt;/u&gt; | 
+    &lt;del&gt;Gạch ngang nội dung sai&lt;/del&gt; | 
+    &lt;mark&gt;Đánh dấu nổi bật&lt;/mark&gt;
+&lt;/p&gt;</code></pre>
+
+            <p><strong>Lưu ý quan trọng:</strong> Sử dụng heading theo thứ tự hợp lý (h1 → h2 → h3) để tốt cho SEO và hỗ trợ người dùng màn hình đọc.</p>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nguyễn Văn A - Blog Học HTML Thuần</p>
+    </footer>
+
+    <div class="toggle-theme" id="theme-toggle">🌙</div>
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light');
+            toggle.innerHTML = '☀️';
+        }
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            toggle.innerHTML = document.body.classList.contains('light') ? '☀️' : '🌙';
+            localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>
